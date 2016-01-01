@@ -1,0 +1,25 @@
+<ion-view  title="عروض التبادل">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+      <a ng-show="signedIn()" ng-click="createTask()" class="button button-assertive button-block button-small">إضافة طلب تبادل</a>
+
+
+        <form class="card list" ui-view>
+            <label class="item item-input" dir="rtl">
+                <i class="icon ion-search placeholder-icon i"></i>
+                <input type="search"  ng-model="searchTask"  placeholder="بحث">
+            </label>
+            <ion-item  ng-repeat="task in tasks | filter: {title: searchTask, status: '!cancelled'} |
+                orderBy: 'datetime':true" class=" item-avatar-right"
+                      href="#/home/browseDetail/{{task.$id}}">
+                <img ng-src="{{task.gravatar}}">
+
+                <h2 dir="rtl">{{task.title | limitTo:25}}{{ task.title.length > 25? "..." : ""}}</h2>
+              <div  class="row">
+              <button class="button  button-positive button-small col col-20">{{task.status}}</button>
+                <p  dir="rtl" class="col col-80"  am-time-ago="task.datetime"></p>
+
+              </div>
+            </ion-item>
+        </form>
+    </ion-content>
+</ion-view>

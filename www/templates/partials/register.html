@@ -1,0 +1,23 @@
+<div class="popup-fade" id=logPopup" title="register">
+
+  <div class="panel-body" dir="rtl">
+    <form name="login" ng-model="user" ng-submit="register(user)">
+
+      <label class="item item-input loginForm" >
+        <i class="ion-android-person"></i>
+        <input class="loginInput" type="text" ng-model="user.name" placeholder="الإسـم" >
+      </label>
+
+      <label class="item item-input loginForm" >
+        <i class="ion-email"></i>
+        <input class="loginInput" type="email" ng-model="user.email" placeholder="الإيـمـيـل">
+
+      </label>
+      <label class="item item-input loginForm" >
+        <i class="ion-unlocked"></i>
+        <input class="loginInput" type="password" ng-model="user.password" placeholder="الرقم السري" >
+      </label>
+
+    </form>
+  </div>
+</div>

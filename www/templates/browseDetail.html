@@ -1,0 +1,57 @@
+<ion-view title=" tbadol" >
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+
+      <div   class="row button-bar button-small button-block ">
+        <a class="button button-assertive col-50">إلغاء</a>
+        <a class="button button-assertive col-50" ng-click="editTask()">تعديل</a>
+      </div>
+
+      <div class="list card">
+            <div class="item item-avatar-right">
+                <img ng-src="{{ selectedTask.gravatar }}">
+              <h2 dir="rtl">           أرسلت بواسطة  {{selectedTask.name}} -noor</h2>
+              <div>
+                <button class="button  button-positive button-small {{selectedTask.status}}">{{ selectedTask.status }}</button>
+                <p  dir="rtl"  am-time-ago="selectedTask.datetime"></p>
+              </div>
+            </div>
+      </div>
+        <div dir="rtl" class="list card">
+            <div class="item item-divider">بيانات المعلم</div>
+            <div class="item item-body">
+                <ion-list >
+                    <ion-item>{{selectedTask.school}}المدرسة :</ion-item>
+                    <ion-item>{{selectedTask.grade}}المرحلة :</ion-item>
+                    <ion-item>{{selectedTask.governorate}}المحافظة :</ion-item>
+                    <ion-item>{{selectedTask.wilayat}}الولاية :</ion-item>
+                    <ion-item>{{selectedTask.residential}}المنطقة السكنية :</ion-item>
+                </ion-list>
+            </div>
+        </div>
+        <div dir="rtl" class="list card">
+            <div class="item item-divider">عروض</div>
+            <div class="item item-body">
+                <form class="list">
+                    <label class="item item-input">
+                        <span class="input-label">اضافة نص ديناميكي وفي البداية تظهر رساله لا يوجد عروض تبادل لهذا الطلب</span><textarea placeholder=""> </textarea>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div dir="rtl" class="list card">
+            <div class="item item-divider">تعليقات</div>
+            <div class="item item-body">
+                <ion-list></ion-list>
+                <form class="list"></form>
+                <h2>لا يوجد تعليقات للتبادل</h2>
+            </div>
+        </div>
+        <div class="button-bar">
+            <button class="button button-positive button-block  icon ion-social-facebook"></button>
+            <button class="button button-balanced button-block  icon ion-social-whatsapp-outline"></button>
+            <button class="button button-calm button-block  icon ion-social-twitter"></button>
+            <button class="button button-assertive button-block  icon ion-social-googleplus"></button>
+        </div>
+
+    </ion-content>
+</ion-view>

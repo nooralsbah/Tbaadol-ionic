@@ -1,0 +1,33 @@
+<ion-view title="صفحتي" >
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+
+
+  <ion-content has-header="true">
+
+    <div id="profile-bg"></div>
+    <div id="content">
+      <div id="profile-info">
+        <img id="profile-image" ng-src="{{currentUser.profile.gravatar}}">
+        <h3 id="profile-name">{{currentUser.profile.name}}</h3>
+        </div>
+
+
+      <button ng-click="logout()" class="button button-small  button-assertive">تسجيل الخروج</button>
+      <button ng-click="changePassword()" class="button button-small  button-assertive">تغيير كلمة السر</button>
+    </div>
+
+        <div class="list card" dir="rtl">
+            <div class="item item-divider bar bar-balanced">الطلب المضاف</div>
+            <div class="item item-body"></div>
+
+        </div>
+
+        <div class="list card" dir="rtl">
+            <div class="item item-divider bar bar-royal">عملية التبادل</div>
+            <div class="item item-body"></div>
+
+        </div>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+.scroll-content, .tab-title, .title, .button, .popup-title {
+  font-family: 'Droid Arabic Kufi', serif;
+}
+/*     profile   */
+#profile-bg {
+  position: fixed;
+  left: 0;
+  top: 44px;
+  width: 100%;
+  height: 150px;
+
+  /*     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/94311/bg.jpg') no-repeat transparent;*/
+  background-size: 100%;
+  background-position: 50% 20%;
+
+  text-align: center;
+}
+#content {
+  position: relative;
+  margin-top: 100px;
+  background-color: white;
+  box-shadow: 0px -1px 10px rgba(0,0,0,0.4);
+  padding-top: 150px;
+}
+
+#profile-info {
+  position: absolute;
+  top: -95px;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+
+}
+#profile-name {
+  color: #444;
+  font-size: 26px;
+}
+#profile-image {
+  display: block;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  width: 128px;
+  height: 128px;
+  margin: 30px auto 0;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+}
+
+
+ .popup-container .popup{
+  border-radius: 5% ;
+  width: 70% !important;
+   background-color:white;
+}
+ .popup-head{
+   background-color: #00b7f4;
+ }
+ .popup-title{
+   color: white;
+ }
+ .panel-body  .loginForm{
+
+   font-family: 'Droid Arabic Kufi', serif;
+
+ }
+ .loginForm .loginInput{
+   padding-right: 20px ;
+   font-family: 'Droid Arabic Kufi', serif;
+ }

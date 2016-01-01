@@ -1,0 +1,39 @@
+<div class="popup-fade" id=editModal" title="" >
+
+  <div class="panel-body" dir="rtl">
+
+    <form name="form"  ng-submit="editTask(selectedTask)">
+
+      <label class="item item-input loginForm" >
+        <input class="loginInput" type="text" ng-model="selectedTask.title" placeholder="معلم /معلمة +المسمى الوظيفي" >
+      </label>
+
+      <label class="item item-input loginForm" >
+        <input class="loginInput" type="text" ng-model="selectedTask.school" placeholder="المـدرسـة">
+      </label>
+
+      <label class="item item-input loginForm" >
+        <input class="loginInput" type="text" ng-model="selectedTask.grade" placeholder="المـرحـلـة " >
+      </label>
+
+      <label class="item item-input loginForm" >
+        <input class="loginInput" type="text" ng-model="selectedTask.governorate" placeholder="المـحـافـظـة/المـنـطـقة" >
+      </label>
+
+      <label class="item item-input loginForm" >
+        <input class="loginInput" type="text" ng-model="selectedTask.wilayat" placeholder="الـولايـة" >
+      </label>
+
+      <label class="item item-input loginForm" >
+        <input class="loginInput" type="text" ng-model="selectedTask.residential" placeholder="منطقة سكنية" >
+      </label>
+
+      <label class="item item-input loginForm" >
+        <textarea class="loginInput"  ng-model="selectedTask.description" placeholder=" الى أين ترغب بالتبادل " ></textarea>
+      </label>
+
+    </form>
+  </div>
+</div>
+
+
