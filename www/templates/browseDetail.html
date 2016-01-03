@@ -1,11 +1,11 @@
 <ion-view title=" tbadol" >
     <ion-content overflow-scroll="true" padding="true" class="has-header">
-
+    <!-- Admin -->
       <div   class="row button-bar button-small button-block ">
-        <a class="button button-assertive col-50">إلغاء</a>
-        <a class="button button-assertive col-50" ng-click="editTask()">تعديل</a>
+        <a class="button button-assertive col-50">Delet</a>
+        <a class="button button-assertive col-50" ng-click="editTask()">Edit</a>
       </div>
-
+    <!-- HEADER -->
       <div class="list card">
             <div class="item item-avatar-right">
                 <img ng-src="{{ selectedTask.gravatar }}">
@@ -16,6 +16,7 @@
               </div>
             </div>
       </div>
+      <!-- Employee Data -->
         <div dir="rtl" class="list card">
             <div class="item item-divider">بيانات المعلم</div>
             <div class="item item-body">
@@ -28,24 +29,68 @@
                 </ion-list>
             </div>
         </div>
+        
+         <!-- DESCRIPTION -->
+      <div dir="rtl" class="list card">
+        <div class="item item-divider">إلى أين ترغب بالتباد</div>
+        <div class="item item-body">
+         <div dir="rtl">
+           {{selectedTask.description}}test
+         </div>
+        </div>
+      </div>
+      
+        <!--OFFERS -->
+        
         <div dir="rtl" class="list card">
             <div class="item item-divider">عروض</div>
             <div class="item item-body">
-                <form class="list">
-                    <label class="item item-input">
-                        <span class="input-label">اضافة نص ديناميكي وفي البداية تظهر رساله لا يوجد عروض تبادل لهذا الطلب</span><textarea placeholder=""> </textarea>
-                    </label>
-                </form>
+
+                    <div class="title" ng-hide="offers && offers.length > 0">
+                        <span>لا يـوجـد عـروض تبــادل لـهـذا الـطـلـب</span>
+                    </div>
+              <div class="row" ng-repeat="offer in offers">
+                <div class="col-md-10">
+                  <button ng-show="offer.accepted" class="button button-balanced button-small disabled">نــقــل</button>
+
+                  <button ng-show="isTaskCreator(selectedTask) && isOpen(selectedTask)" class="button button-calm button-small"
+                          ng-click="acceptOffer(offer.$id,offer.uid)">قـبـــول - {{offer.title}}</button>
+
+                  <button ng-show="isOfferMaker(offer) && isOpen(selectedTask)" class="button button-assertive button-small"
+                          ng-click="cancelOffer(offer.$id)">إلـغـــاء - {{offer.title}}</button>
+
+                  <img ng-src="{{offer.gravatar}}" class="img-circle offer gravatar">
+                  <span>{{offer.name}}</span>
+                </div>
+                </div>
+
             </div>
         </div>
-        <div dir="rtl" class="list card">
+         <!-- COMMENTS -->
+         <div dir="rtl" class="list card">
             <div class="item item-divider">تعليقات</div>
             <div class="item item-body">
-                <ion-list></ion-list>
-                <form class="list"></form>
-                <h2>لا يوجد تعليقات للتبادل</h2>
-            </div>
-        </div>
+              <div class="title"  ng-hide="comments && comments.length > 0">
+                <span>لا يوجد تعليقات للتبادل</span>
+            </div><br>
+
+              <div class="row" ng-repeat="com in comments">
+                <div class="col-md-1">
+                  <img ng-src="{{com.gravatar}}" class="img-circle comment gravatar">
+                </div>
+                <div class="col-md-11">
+                  <div class="well well-sm cmt">
+                    <span class="cmt-title">{{com.name}}:</span>
+                    <span class="cmt-time pull-left"><span am-time-ago="com.datetime"></span></span><br>
+
+                    <span>{{com.content}}</span>
+                  </div>
+                </div>
+              </div><br>
+
+              </div>
+        </div> </div>
+         <!-- social media -->
         <div class="button-bar">
             <button class="button button-positive button-block  icon ion-social-facebook"></button>
             <button class="button button-balanced button-block  icon ion-social-whatsapp-outline"></button>
